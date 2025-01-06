@@ -99,6 +99,30 @@
           el.focus()
         }
       }
+    },
+    beforeCreate() {
+      console.log('beforeCreate') // lifecycle hook before app creation
+    },
+    created() {
+      console.log('created') // lifecycle hook when the app is created
+    },
+    beforeMount() {
+      console.log('beforeMount') // lifecycle hook before it mount or viewed on browser
+    },
+    mounted() {
+      console.log('mounted') // lifecycle hook when it mounts or viewed on browser
+    },
+    beforeUpdate() {
+      console.log('beforeUpdate') // lifecycle hook before the changes take effect
+    },
+    updated() {
+      console.log('updated') // lifecycle hook when changes are applied and the page reloads
+    },
+    beforeUnmount() {
+      console.log('beforeUnmount') // lifecycle hook before unmounting or removed from displaying on browser
+    },
+    unmounted() {
+      console.log('unmounted') // lifecycle hook when the page is unmounted or not viewed on browser
     }
   }
 </script>
