@@ -1,6 +1,7 @@
 <template>
   <q-page padding>
     <input v-model="message">
+    <button @click="clearMessage">Clear</button>
     <h5>{{ message }}</h5>
   </q-page>
 </template>
@@ -10,6 +11,11 @@
     data() {
       return {
         message: "Hello quasar"
+      }
+    },
+    methods: {
+      clearMessage() {
+        this.message = ""
       }
     }
   }
