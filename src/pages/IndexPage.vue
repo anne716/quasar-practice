@@ -17,8 +17,23 @@
       @keyup.esc="clearMessage"
       @keyup.enter="alertMessage"
     >
+
     <button @click="clearMessage">Clear</button>
-    <h5>{{ message }}</h5>
+
+    <!-- Using v-show directive (renders css display attribute)-->
+    <!-- <h5
+      v-show="message.length"
+      class="border-grey">
+        {{ message }}
+    </h5> -->
+
+    <!-- Using v-if directive (removes completely from DOM) -->
+    <h5
+      v-if="message.length"
+      class="border-grey">
+        {{ message }}
+    </h5>
+    <h6 v-else>No message entered.</h6>
   </q-page>
 </template>
 
@@ -49,3 +64,9 @@
     }
   }
 </script>
+
+<style>
+  .border-grey {
+    border: 1px solid grey;
+  }
+</style>
