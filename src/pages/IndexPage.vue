@@ -34,6 +34,10 @@
         {{ message }}
     </h5>
     <h6 v-else>No message entered.</h6>
+
+    <hr>
+
+    <p>Uppercase Message: {{ messageUppercase() }}</p>
   </q-page>
 </template>
 
@@ -60,7 +64,11 @@
       //   else if (e.keyCode == 13) {
       //     this.alertMessage()
       //   }
-      // }
+      // },
+      messageUppercase() {
+        console.log('messageUppercase method was fired')
+        return this.message.toUpperCase()
+      }
     }
   }
 </script>
