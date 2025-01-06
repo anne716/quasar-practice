@@ -1,5 +1,11 @@
 <template>
   <q-page padding>
+    <button
+      @click="counter++"
+      style="position: absolute; right: 10px;"
+    >
+      {{ counter }}
+    </button>
     <!-- Using keyboard events without shortcut -->
     <!-- <input v-model="message" @keyup="handleKeyup"> -->
 
@@ -37,7 +43,7 @@
 
     <hr>
 
-    <p>Uppercase Message: {{ messageUppercase() }}</p>
+    <p>Uppercase Message: {{ messageUppercase }}</p>
   </q-page>
 </template>
 
@@ -45,7 +51,14 @@
   export default {
     data() {
       return {
-        message: "Hello quasar"
+        message: "Hello quasar",
+        counter: 0
+      }
+    },
+    computed: {
+      messageUppercase() {
+        console.log('messageUppercase method was fired')
+        return this.message.toUpperCase()
       }
     },
     methods: {
@@ -65,10 +78,6 @@
       //     this.alertMessage()
       //   }
       // },
-      messageUppercase() {
-        console.log('messageUppercase method was fired')
-        return this.message.toUpperCase()
-      }
     }
   }
 </script>
