@@ -22,6 +22,7 @@
       v-model="message"
       @keyup.esc="clearMessage"
       @keyup.enter="alertMessage"
+      v-autofocus
     >
 
     <button @click="clearMessage">Clear</button>
@@ -78,6 +79,13 @@
       //     this.alertMessage()
       //   }
       // },
+    },
+    directives: {
+      autofocus: {
+        mounted(el) {
+          el.focus()
+        }
+      }
     }
   }
 </script>
