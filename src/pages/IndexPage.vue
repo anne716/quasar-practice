@@ -8,6 +8,7 @@
         :index="index"
         :delete-task="deleteTask"
       >
+        {{ task.name }}
       </task>
     </ul>
   </q-page>
