@@ -18,14 +18,18 @@
       @mouseleave="alertMessage"
     > -->
 
+    <!-- Shortcut for v-bind is using colon only (:) -->
     <input
       v-model="message"
       @keyup.esc="clearMessage"
       @keyup.enter="alertMessage"
       v-autofocus
+      :class="{ 'error' : message.length > 22 }"
     >
 
     <button @click="clearMessage">Clear</button>
+
+    <div>{{ message.length }}</div>
 
     <!-- Using v-show directive (renders css display attribute)-->
     <!-- <h5
@@ -93,5 +97,9 @@
 <style>
   .border-grey {
     border: 1px solid grey;
+  }
+  .error {
+    color: red;
+    background: pink;
   }
 </style>
