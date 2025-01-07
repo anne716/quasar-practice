@@ -4,6 +4,7 @@
     tag="router-link"
     clickable
     exact
+    class="text-grey-4"
   >
     <q-item-section
       v-if="props.icon"

@@ -24,10 +24,12 @@
 
     <q-drawer
       :breakpoint="767"
+      :width="250"
       show-if-above
       bordered
+      class="bg-primary"
     >
-      <q-list>
+      <q-list dark>
         <q-item-label
           header
         >
@@ -70,6 +72,10 @@ const linksList = [
 @media screen and (min-width: 768px) {
   .q-footer {
     display: none;
+  }
+
+  .q-drawer .q-router-link--exact-active {
+    color: white !important;
   }
 }
 </style>
