@@ -19,6 +19,18 @@
       </q-toolbar>
     </q-header>
 
+    <q-footer>
+      <q-tabs>
+        <q-route-tab
+          v-for="link in linksList"
+          :key="link.title"
+          :to="link.url"
+          :icon="link.icon"
+          :label="link.title"
+        />
+      </q-tabs>
+    </q-footer>
+
     <q-drawer
       v-model="leftDrawerOpen"
       show-if-above
