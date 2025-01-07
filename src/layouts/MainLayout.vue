@@ -2,14 +2,6 @@
   <q-layout view="hHh lpR fFf">
     <q-header elevated>
       <q-toolbar>
-        <q-btn
-          flat
-          dense
-          round
-          icon="menu"
-          aria-label="Menu"
-          @click="toggleLeftDrawer"
-        />
 
         <q-toolbar-title class="absolute-center">
           Quasar Practice App
@@ -31,7 +23,6 @@
     </q-footer>
 
     <q-drawer
-      v-model="leftDrawerOpen"
       :breakpoint="767"
       show-if-above
       bordered
@@ -58,7 +49,6 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
 import NavigationLink from 'src/components/NavigationLink.vue'
 
 const linksList = [
@@ -74,12 +64,6 @@ const linksList = [
     url: '/settings'
   }
 ]
-
-const leftDrawerOpen = ref(false)
-
-function toggleLeftDrawer () {
-  leftDrawerOpen.value = !leftDrawerOpen.value
-}
 </script>
 
 <style>
