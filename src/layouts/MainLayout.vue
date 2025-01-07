@@ -33,6 +33,7 @@
 
     <q-drawer
       v-model="leftDrawerOpen"
+      :breakpoint="767"
       show-if-above
       bordered
     >
