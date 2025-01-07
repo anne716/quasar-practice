@@ -3,6 +3,7 @@
     :to="props.url"
     tag="router-link"
     clickable
+    exact
   >
     <q-item-section
       v-if="props.icon"
