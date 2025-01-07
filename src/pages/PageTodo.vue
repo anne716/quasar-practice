@@ -1,10 +1,12 @@
 <template>
-  <q-page padding>
+  <q-page class="q-pa-md">
     <q-list bordered>
 
       <q-item
         v-for="task in tasks"
         :key="task.id"
+        @click="task.completed = !task.completed"
+        clickable
         v-ripple
       >
         <q-item-section side top>
