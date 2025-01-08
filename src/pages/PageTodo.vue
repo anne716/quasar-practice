@@ -8,7 +8,7 @@
       <q-item
         v-for="(task, key) in tasks"
         :key="key"
-        @click="task.completed = !task.completed"
+        @click="toggleCompletion(key)"
         clickable
         v-ripple
         :class="!task.completed ? 'bg-orange-1' : 'bg-green-1'"
@@ -66,6 +66,12 @@ export default {
     tasks() {
       const store = useTasksStore();
       return store.allTasks;
+    }
+  },
+  methods: {
+    toggleCompletion(taskId) {
+      const store = useTasksStore();
+      store.toggleTaskCompletion(taskId);
     }
   }
 };

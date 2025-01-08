@@ -51,7 +51,11 @@ export const useTasksStore = defineStore('tasks', {
     allTasks: (state) => state.tasks
   },
   actions: {
-
+    toggleTaskCompletion(taskId) {
+      if (this.tasks[taskId]) {
+        this.tasks[taskId].completed = !this.tasks[taskId].completed;
+      }
+    }
   },
 });
 
